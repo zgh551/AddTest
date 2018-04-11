@@ -9,7 +9,7 @@
 
 void test_AverageThreeBytes_should_AverageMidRangeValues(void)
 {
-TEST_ASSERT_EQUAL_HEX8(41, AverageThreeBytes(30, 40, 50));
+TEST_ASSERT_EQUAL_HEX8(40, AverageThreeBytes(30, 40, 50));
 TEST_ASSERT_EQUAL_HEX8(40, AverageThreeBytes(10, 70, 40));
 TEST_ASSERT_EQUAL_HEX8(33, AverageThreeBytes(33, 33, 33));
 }
