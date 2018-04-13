@@ -34,6 +34,14 @@ for file in dirs:
 			print(file)
 			cof = env.Object(Glob('%s/src/*.c' % (file)))
 			print(cof)
+			
+cof = env.Object(Glob('./*.c'))
+print(cof)
+
+cof = prodEnv.Program(Glob('%s/*.obj' % (BUILD_INC)))
+print(cof)
+
+os.system(os.path.join(C2000_BIN,'hex2000') + ' -romwidth 16 -memwidth 16 -i -o %s.hex %s/*.out' %(ProjName,BUILD_INC))
 
 #calculate = SConscript('Module/SConscript',exports = ['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
 #unity     = SConscript('Unity/SConscript',exports = ['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
