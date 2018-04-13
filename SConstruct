@@ -27,7 +27,7 @@ LINKCOM='$LINK $CFLAGS $LINKFLAGS $SOURCES $OUTPUTFILE $LIBS'
 )
 #################################################################################################
 os.rmdir('./build')
-os.remove('./Debug/*')
+os.remove('./Debug/*.obj')
 dirs = os.listdir(PROJECT_ROOT)
 for file in dirs:
     if os.path.isdir(file):        
