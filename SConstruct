@@ -47,7 +47,7 @@ print('out:=>%s' % (BUILD_INC))
 cof = env.Program(Glob('%s/*.obj' % (BUILD_INC)))
 print(cof)
 #################################################################################################
-#os.system(os.path.join(C2000_BIN,'hex2000') + ' -romwidth 16 -memwidth 16 -i -o %s.hex %s/*.out' %(ProjName,BUILD_INC))
+os.system(os.path.join(C2000_BIN,'hex2000') + ' -romwidth 16 -memwidth 16 -i -o %s.hex %s/*.out' %(ProjName,BUILD_INC))
 #################################################################################################
 #calculate = SConscript('Module/SConscript',exports = ['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
 #unity     = SConscript('Unity/SConscript',exports = ['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
