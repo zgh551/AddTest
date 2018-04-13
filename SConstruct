@@ -13,8 +13,10 @@ UNITY_INC = os.path.join(PROJECT_ROOT, 'Unity/inc')
 CALCULATE_INC = os.path.join(PROJECT_ROOT, 'Module/inc')
 BUILD_INC = os.path.join(PROJECT_ROOT, 'build')
 
-print(os.listdir(PROJECT_ROOT))
-
+dirs = os.listdir(PROJECT_ROOT)
+for file in dirs:
+   print(file)
+   
 env = Environment(
 CFLAGS = '-v28 -ml -mt --float_support=fpu32 --include_path="%s" --include_path="%s" --include_path="%s" --advice:performance=all -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --obj_directory="%s"' % (C2000_INC,UNITY_INC,CALCULATE_INC,BUILD_INC),
 CC = os.path.join(C2000_BIN,'cl2000'),
