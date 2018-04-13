@@ -11,14 +11,9 @@ C2000_INC = os.path.join(C2000_HOME, 'include')
 
 UNITY_INC = os.path.join(PROJECT_ROOT, 'Unity/inc')
 CALCULATE_INC = os.path.join(PROJECT_ROOT, 'Module/inc')
-BUILD_INC = os.path.join(PROJECT_ROOT, 'build')
+BUILD_INC = os.path.join(PROJECT_ROOT, 'Debug')
 
-dirs = os.listdir(PROJECT_ROOT)
-for file in dirs:
-   print(file)
-   
-os.mkdir("./build")
-   
+#################################################################################################
 env = Environment(
 CFLAGS = '-v28 -ml -mt --float_support=fpu32 --include_path="%s" --include_path="%s" --include_path="%s" --advice:performance=all -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --obj_directory="%s"' % (C2000_INC,UNITY_INC,CALCULATE_INC,BUILD_INC),
 CC = os.path.join(C2000_BIN,'cl2000'),
@@ -31,6 +26,12 @@ LINK = os.path.join(C2000_BIN,'cl2000'),
 LINKFLAGS='-z -m"%s.map" --heap_size=0x200 --stack_size=0x200 --warn_sections -i"%s" -i"%s" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="%s_linkInfo.xml" --rom_model ' %(ProjName,C2000_LIB,C2000_INC,ProjName),
 LINKCOM='$LINK $CFLAGS $LINKFLAGS $SOURCES --output_file= AddTest.out --library= 28335_RAM_lnk.cmd'
 )
+#################################################################################################
+dirs = os.listdir(PROJECT_ROOT)
+for file in dirs:
+    if (os.path.isdir)
+        print(file)
+   
 
 #calculate = SConscript('Module/SConscript',exports = ['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
 #unity     = SConscript('Unity/SConscript',exports = ['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
@@ -39,7 +40,7 @@ LINKCOM='$LINK $CFLAGS $LINKFLAGS $SOURCES --output_file= AddTest.out --library=
 #pro_out   = SConscript('build/SConscript',exports = ['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
 
 #pro_hex = env.Command(os.path.join(C2000_BIN,'cl2000'),'-romwidth 16 -memwidth 16 -i -o','%s.hex'(ProjName),'*.out')
-
+#os.mkdir("./build")
 ########################################
 
 # hex_env = Environment(
