@@ -24,7 +24,9 @@ CCCOM = '$CC $CFLAGS $SOURCES',
 #link option
 LINK = os.path.join(C2000_BIN,'cl2000'),
 LINKFLAGS='-z -m"%s.map" --heap_size=0x200 --stack_size=0x200 --warn_sections -i"%s" -i"%s" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="%s_linkInfo.xml" --rom_model ' %(ProjName,C2000_LIB,C2000_INC,ProjName),
-LINKCOM='$LINK $CFLAGS $LINKFLAGS $SOURCES --output_file= AddTest.out --library= 28335_RAM_lnk.cmd'
+OUTPUTFILE = '--output_file=%s/%s.out' %(BUILD_INC,ProjName),
+LIBS       = '--library=28335_RAM_lnk.cmd',
+LINKCOM='$LINK $CFLAGS $LINKFLAGS $SOURCES $OUTPUTFILE $LIBS'
 )
 #################################################################################################
 dirs = os.listdir(PROJECT_ROOT)
