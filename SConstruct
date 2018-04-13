@@ -42,10 +42,8 @@ for file in dirs:
 cof = env.Object(Glob('./*.c'))
 print(cof)
 #################################################################################################
-print('out:=>%s' % (BUILD_INC))
-
-cof = env.Program(Glob('%s/*.obj' % (BUILD_INC)))
-print(cof)
+OutFile = env.Program(Glob('%s/*.obj' % (BUILD_INC)))
+print(OutFile)
 #################################################################################################
 os.system(os.path.join(C2000_BIN,'hex2000') + ' -romwidth 16 -memwidth 16 -i -o %s.hex %s/*.out' %(ProjName,BUILD_INC))
 #################################################################################################
