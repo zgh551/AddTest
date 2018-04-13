@@ -26,7 +26,7 @@ LIBS       = '--library=28335_RAM_lnk.cmd --library=rts2800_fpu32.lib',
 LINKCOM='$LINK $CFLAGS $LINKFLAGS $SOURCES $OUTPUTFILE $LIBS'
 )
 #################################################################################################
-os.remove('./Debug/*.obj')
+os.remove('./Debug/unity.obj')
 dirs = os.listdir(PROJECT_ROOT)
 for file in dirs:
     if os.path.isdir(file):        
