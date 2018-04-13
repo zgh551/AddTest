@@ -36,15 +36,15 @@ for file in dirs:
 		if os.path.exists('%s/src' %(file)):
 			print(file)
 			cof = env.Object(Glob('%s/src/*.c' % (file)))
-			env.Clean(cof)
+			#env.Clean(cof)
 			print(cof)
 			
 cof = env.Object(Glob('./*.c'))
-env.Clean(cof)
+#env.Clean(cof)
 print(cof)
 #################################################################################################
 OutFile = env.Program(Glob('%s/*.obj' % (BUILD_INC)))
-env.Clean(OutFile)
+#env.Clean(OutFile)
 print(OutFile)
 #################################################################################################
 os.system(os.path.join(C2000_BIN,'hex2000') + ' -romwidth 16 -memwidth 16 -i -o %s/%s.hex %s/*.out' %(BUILD_INC,ProjName,BUILD_INC))
