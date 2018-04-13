@@ -29,9 +29,9 @@ LINKCOM='$LINK $CFLAGS $LINKFLAGS $SOURCES --output_file= AddTest.out --library=
 #################################################################################################
 dirs = os.listdir(PROJECT_ROOT)
 for file in dirs:
-    if os.path.isdir(file):
-        print(file)
-   
+    if os.path.isdir(file):        
+		if os.path.exists('%s/src' %(file)):
+			print(file)
 
 #calculate = SConscript('Module/SConscript',exports = ['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
 #unity     = SConscript('Unity/SConscript',exports = ['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
