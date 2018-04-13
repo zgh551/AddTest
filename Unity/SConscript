@@ -1,0 +1,21 @@
+import os
+import sys,traceback
+
+print('Building file:DumbExample.c')
+
+Import(['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
+
+#BUILD_DIR = 'build'
+
+#VariantDir(BUILD_DIR,'src')
+
+prodEnv = Environment(
+#compile opetion
+CFLAGS = '-v28 -ml -mt --float_support=fpu32 --include_path="%s" --include_path="%s" --include_path="%s" --advice:performance=all -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --obj_directory="%s"' % (C2000_INC, UNITY_INC, CALCULATE_INC,BUILD_INC),
+CC = os.path.join(C2000_BIN,'cl2000'),
+CCCOM = '$CC $CFLAGS $SOURCES',
+)
+
+#cof = prodEnv.Object('.\src\DumbExample.c')
+cof = prodEnv.Object(Glob('./src/*.c'))
+Return('cof')
