@@ -29,7 +29,7 @@ LINKCOM='$LINK $CFLAGS $LINKFLAGS $SOURCES --output_file= AddTest.out --library=
 #################################################################################################
 dirs = os.listdir(PROJECT_ROOT)
 for file in dirs:
-    if (os.path.isdir)
+    if os.path.isdir:
         print(file)
    
 
