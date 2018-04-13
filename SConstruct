@@ -26,10 +26,10 @@ LIBS       = '--library=28335_RAM_lnk.cmd',
 LINKCOM='$LINK $CFLAGS $LINKFLAGS $SOURCES $OUTPUTFILE $LIBS'
 )
 #################################################################################################
-debug_dirs = os.listdir('%s' % (BUILD_INC))
-for temp_file in debug_dirs:
-	os.remove('%s/%s' % (BUILD_INC,temp_file))
-	print('Delete the file:%s' % (temp_file))
+#debug_dirs = os.listdir('%s' % (BUILD_INC))
+#for temp_file in debug_dirs:
+#	os.remove('%s/%s' % (BUILD_INC,temp_file))
+#	print('Delete the file:%s' % (temp_file))
 	
 dirs = os.listdir(PROJECT_ROOT)
 for file in dirs:
