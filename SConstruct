@@ -28,7 +28,7 @@ LINKCOM='$LINK $CFLAGS $LINKFLAGS $SOURCES $OUTPUTFILE $LIBS'
 #################################################################################################
 debug_dirs = os.listdir('%s' % (BUILD_INC))
 for temp_file in debug_dirs:
-	os.remove(temp_file)
+	os.remove('%s/%s' % (BUILD_INC,temp_file))
 	print('Delete the file:%s' % (temp_file))
 	
 dirs = os.listdir(PROJECT_ROOT)
