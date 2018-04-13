@@ -1,0 +1,11 @@
+/Module/
+/Unity/
+/makefile
+/objects.mk
+/sources.mk
+/subdir_rules.mk
+/subdir_vars.mk
+/main.obj
+/AddTest.lib
+/ccsObjs.opt
+/main.d
