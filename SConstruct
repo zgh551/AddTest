@@ -20,9 +20,9 @@ CC = os.path.join(C2000_BIN,'cl2000'),
 CCCOM = '$CC $CFLAGS $SOURCES',
 #################################################################################################
 LINK = os.path.join(C2000_BIN,'cl2000'),
-LINKFLAGS='-z -m"%s.map" --heap_size=0x200 --stack_size=0x200 --warn_sections -i"%s" -i"%s" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="%s_linkInfo.xml" --rom_model ' %(ProjName,C2000_LIB,C2000_INC,ProjName),
+LINKFLAGS='-z -m"%s/%s.map" --heap_size=0x200 --stack_size=0x200 --warn_sections -i"%s" -i"%s" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="%s_linkInfo.xml" --rom_model ' %(BUILD_INC,ProjName,C2000_LIB,C2000_INC,ProjName),
 OUTPUTFILE = '--output_file=%s/%s.out' %(BUILD_INC,ProjName),
-LIBS       = '--library=28335_RAM_lnk.cmd',
+LIBS       = '--library=28335_RAM_lnk.cmd --library=rts2800_fpu32.lib',
 LINKCOM='$LINK $CFLAGS $LINKFLAGS $SOURCES $OUTPUTFILE $LIBS'
 )
 #################################################################################################
