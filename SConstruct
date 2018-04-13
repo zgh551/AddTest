@@ -40,6 +40,8 @@ for file in dirs:
 cof = env.Object(Glob('./*.c'))
 print(cof)
 
+print('out:=>%s' % (BUILD_INC))
+
 cof = env.Program(Glob('%s/*.obj' % (BUILD_INC)))
 print(cof)
 
