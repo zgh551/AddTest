@@ -17,7 +17,7 @@ dirs = os.listdir(PROJECT_ROOT)
 for file in dirs:
    print(file)
    
-os.mkdir(build)
+os.mkdir("./build")
    
 env = Environment(
 CFLAGS = '-v28 -ml -mt --float_support=fpu32 --include_path="%s" --include_path="%s" --include_path="%s" --advice:performance=all -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --obj_directory="%s"' % (C2000_INC,UNITY_INC,CALCULATE_INC,BUILD_INC),
