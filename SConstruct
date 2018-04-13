@@ -32,6 +32,8 @@ for file in dirs:
     if os.path.isdir(file):        
 		if os.path.exists('%s/src' %(file)):
 			print(file)
+			cof = env.Object(Glob('%s/src/*.c' % (file)))
+			print(cof)
 
 #calculate = SConscript('Module/SConscript',exports = ['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
 #unity     = SConscript('Unity/SConscript',exports = ['C2000_BIN','C2000_LIB','C2000_INC','ProjName','UNITY_INC','CALCULATE_INC','BUILD_INC'])
